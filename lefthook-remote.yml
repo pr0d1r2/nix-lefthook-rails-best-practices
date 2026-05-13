@@ -1,0 +1,13 @@
+---
+pre-commit:
+  commands:
+    rails-best-practices:
+      glob: "**/*.rb"
+      run: bundle exec rails_best_practices {staged_files} || true
+      timeout: 60s
+
+pre-push:
+  commands:
+    rails-best-practices:
+      run: bundle exec rails_best_practices . || true
+      timeout: 60s
