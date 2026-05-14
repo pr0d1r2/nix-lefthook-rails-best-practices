@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+echo "$*" >> "${STUB_LOG}"
+if [ "${STUB_EXIT:-0}" != "0" ]; then
+    echo "Found 1 error" >&2
+fi
+exit "${STUB_EXIT:-0}"
